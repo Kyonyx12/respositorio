@@ -131,7 +131,7 @@
       <button class="w-100 btn btn-primary btn-lg" type="submit">Registrar</button>
 
       <div class="form-check text-start my-3">
-        <a href="IndexBoot.html">Volver</a>
+        <a href="index.html">Volver</a>
       </div>
     </form>
     </div>
@@ -163,7 +163,7 @@
       const subirDocumentos = document.getElementById("subirDocumentos");
       const mostrarDocumentos = document.getElementById("mostrarDocumentos");
       if (usuario != null) {
-        window.location.href = "indexBoot.html";
+        window.location.href = "index.html";
       }
 
       const loginLink = document.getElementById("loginLink");
@@ -188,7 +188,7 @@
           localStorage.removeItem("usuario");
 
           // Redirigir a la página de inicio de sesión
-          window.location.href = "indexBoot.html";
+          window.location.href = "index.html";
         });
       } else {
         // Si el usuario no existe, mostrar el enlace de login y ocultar el botón de cerrar sesión

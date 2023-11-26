@@ -6,7 +6,7 @@ logoutButton.addEventListener("click", function () {
     // Sign-out exitoso
     alert("Sesión cerrada con éxito");
     localStorage.removeItem("usuario");
-    window.location="./indexBoot.html";
+    window.location="./index.html";
   }).catch(function(error) {
     // An error happened.
     console.error("Error al cerrar sesión: ", error);

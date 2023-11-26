@@ -1,0 +1,268 @@
+<html lang="en" data-bs-theme="dark" ><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Mostrar Documentos - Proventus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
+
+    <style>
+
+        /* Estilos para los botones de borrar */
+#deleteBtnId {
+  margin-left: 10px; /* Espaciado entre el enlace y el botón */
+}
+
+/* Estilos para la lista */
+.documento-container {
+  margin-bottom: 15px; /* Espaciado entre los elementos de la lista */
+}
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+    
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+        </symbol>
+        <symbol id="cart" viewBox="0 0 16 16">
+          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+        </symbol>
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+        </symbol>
+      </svg>
+      
+      <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand d-md-none" href="#">
+            <svg class="bi" width="24" height="24"><use xlink:href="#aperture"></use></svg>
+            Aperture
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="#offcanvas" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="#offcanvas" aria-labelledby="#offcanvasLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="#offcanvasLabel">Aperture</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-grow-1 justify-content-between">
+                <li class="nav-item"><a class="nav-link" href="#">
+                  <svg class="bi" width="24" height="24"><use xlink:href="#aperture"></use></svg>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="IndexBoot.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" id="subirDocumentos" href="DocumentosBoot.html"  >Documentos</a></li>
+                <li class="nav-item"><a class="nav-link" id="mostrarDocumentosUsuario" href="mostrarDocumentosUsuarioBoot.html" style="display: none;">Mostrar mis Documentos</a></li>
+                <li class="nav-item"><a class="nav-link" id="mostrarDocumentos" href="mostrarDocumentosBoot.html" style="display: none;">Todos los Documentos</a></li>
+                <li class="nav-item"><a class="nav-link" id="buscarDocumentos" href="buscarDocumentosBoot.html" style="display: none;">Buscar Documentos</a></li>
+                <li>
+                  <div class="col-md-3 text-end" id="loginLink">
+                    <a href="login.html"   class="btn btn-outline-primary me-2">Login</a>
+                  </div>    
+                </li>
+      
+                <li>
+                  <div class="col-md-3 text-end">
+                    <a id="logout" class="btn btn-primary" style="display: none;">Cerrar Sesion</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+<h1 style="display: flex; justify-content: center;">Documentos</h1> 
+
+      <div class="contenedor" style="display: flex; justify-content: center;">
+
+        
+        <div id="pdfContainer" style="display: flex; justify-content: space-evenly; flex-wrap: wrap;"></div>
+   
+
+    
+      </div>
+    
+
+ <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+ <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-storage.js"></script>
+ <script src="./javascript/firebase.js"></script>
+ <script src="./javascript/logout.js"></script>
+ <script>
+      // var auth = firebase.auth();
+
+      const contenedor = document.getElementById("pdfContainer");
+      // Obtener una referencia al almacenamiento de Firebase
+      var storageRef = firebase.storage().ref();
+
+      // Obtener la referencia a la carpeta "documentos" en Firebase Storage
+      var documentosRef = storageRef.child("documentos");
+
+      // Para cada usuario, obtén los documentos dentro de su carpeta
+      documentosRef
+        .listAll()
+        .then((result) => {
+
+          result.prefixes.forEach((folderRef) => {
+            // Itera a través de las carpetas
+            const folderName = folderRef.name;
+            // console.log(folderName);
+            
+            
+
+            folderRef.listAll().then((subFolderResult) => {
+            if(subFolderResult.items.length==0){
+                  contenedor.innerHTML = "<h2 style='display: flex; justify-content: center;'>No hay ningún documento</h2>";
+              } else {
+                            // Obtener una referencia a la autenticación de Firebase
+              subFolderResult.items.forEach((itemRef) => {
+                // Obtiene el nombre del archivo y su URL de descarga
+                const nombreArchivo = itemRef.name;
+                const idUsuario = itemRef.parent.name;
+
+                itemRef.getDownloadURL().then((url) => {
+                  // Crea un enlace clickeable para cada documento
+                  const link = document.createElement("a");
+                  const p = document.createElement("p");
+                  const iFrame = document.createElement("iframe");
+
+                  p.textContent = `ID de Usuario: ${idUsuario}, documento: `
+                  link.textContent = nombreArchivo;
+
+                  iFrame.src=url
+                  iFrame.embedded=true;
+                  iFrame.style="width:100%; height:350px;"
+                  iFrame.frameborder="0"
+
+                  link.href = url;
+                  link.target = "_blank"; // Abre el enlace en una nueva ventana o pestaña
+
+                  // Crea un botón para borrar el documento
+                  const deleteButton = document.createElement("button");
+                  deleteButton.classList.add("btn", "btn-danger"); // Agregar clases Bootstrap para estilos
+
+                  // Asignar ID al botón
+                  deleteButton.id = "deleteBtnId";
+                  const br = document.createElement("br");
+                  deleteButton.textContent = "Borrar";
+                  deleteButton.addEventListener("click", () => {
+                    // Agrega el código para borrar el documento aquí
+                    // itemRef.delete() para borrar el documento
+                    let confirmacion = confirm(
+                      "¿Estas seguro de que quieres eliminar este documento? no hay vuelta atras."
+                    );
+
+                    if (confirmacion) {
+                      itemRef
+                        .delete()
+                        .then(() => {
+                          // Documento borrado exitosamente
+                          link.remove(); // Elimina el enlace del documento de la lista
+                          deleteButton.remove(); // Elimina el botón de borrar
+                        })
+                        .catch((error) => {
+                          console.error(
+                            "Error al borrar el documento: ",
+                            error
+                          );
+                        });
+                    } else {
+                      alert("Eliminacion cancelada.");
+                    }
+                  });
+
+                  const containerDiv = document.createElement("div");
+                  containerDiv.appendChild(p);
+                  containerDiv.appendChild(iFrame);
+                  containerDiv.appendChild(br);
+                  containerDiv.appendChild(link);
+                  containerDiv.appendChild(deleteButton);
+                  contenedor.appendChild(containerDiv);
+                });
+              });
+              }
+
+            });
+          });
+        })
+        .catch((error) => {
+          console.error("Error al obtener la lista de archivos: ", error);
+        });
+    </script>
+    <script>
+      // Verificar si el usuario está en el LocalStorage
+      const usuario = localStorage.getItem("usuario");
+      const mostrarDocumentosUsuario = document.getElementById(
+        "mostrarDocumentosUsuario"
+      );
+      const buscarDocumentos = document.getElementById("buscarDocumentos");
+
+      const mostrarDocumentos = document.getElementById("mostrarDocumentos");
+
+      if (usuario == null) {
+        window.location.href = "login.html";
+      }
+
+      const loginLink = document.getElementById("loginLink");
+      const logoutBtn = document.getElementById("logout");
+
+      if (usuario) {
+        if (usuario == "admin@admin.com") {
+          mostrarDocumentos.style.display = "inline-block";
+          buscarDocumentos.style.display = "inline-block";
+        } else {
+          mostrarDocumentosUsuario.style.display = "inline-block";
+        }
+        // Si el usuario existe, mostrar el botón de cerrar sesión y ocultar el enlace de login
+        logoutBtn.style.display = "inline-block";
+        loginLink.style.display = "none";
+
+        // Agregar evento para cerrar sesión
+        logoutBtn.addEventListener("click", () => {
+          // Eliminar el usuario del LocalStorage
+          localStorage.removeItem("usuario");
+
+          // Redirigir a la página de inicio de sesión
+          window.location.href = "indexBoot.html";
+        });
+      } else {
+        // Si el usuario no existe, mostrar el enlace de login y ocultar el botón de cerrar sesión
+        loginLink.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+
+        if ((window.location = "subirDocumentosBoot.html")) {
+          alert("No tienes permitido realizar esta accion, inicia sesion");
+          window.location = "login.html";
+        }
+      }
+    </script>
+  </body>
+  
+</html>
+
+

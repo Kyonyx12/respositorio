@@ -1,0 +1,110 @@
+<html lang="en" data-bs-theme="dark"><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Inicio de Sesion - Proventus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+    
+    <!-- Custom styles for this template -->
+    <link href="login.css" rel="stylesheet">
+  </head>
+  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+    
+<main class="form-signin w-100 m-auto">
+  <form id="login-form" method="POST" enctype="multipart/form-data">
+    <img class="mb-4" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="" width="80" height="80">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" name="contraseña" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="form-check text-start my-3">
+     <a href="registrar.html">Registrar</a>
+     <a href="IndexBoot.html">Volver</a>
+    </div>
+    <button class="btn btn-primary w-100 py-2" type="submit">INICIAR</button>
+    <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
+  </form>
+</main>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+    <script src="./javascript/firebase.js"></script>
+    <script src="./javascript/logout.js"></script>
+    <script src="./javascript/login.js"></script>
+    <script>
+      // Verificar si el usuario está en el LocalStorage
+      const usuario = localStorage.getItem("usuario");
+
+      const mostrarDocumentosUsuario = document.getElementById(
+        "mostrarDocumentosUsuario"
+      );
+      const subirDocumentos = document.getElementById("subirDocumentos");
+      const mostrarDocumentos = document.getElementById("mostrarDocumentos");
+      const buscarDocumentos = document.getElementById("buscarDocumentos");
+
+      const loginLink = document.getElementById("loginLink");
+      const logoutBtn = document.getElementById("logout");
+
+      if(usuario != null){
+        window.location.href = "indexBoot.html";
+      }
+
+      if (usuario) {
+        if (usuario == "admin@admin.com") {
+          mostrarDocumentos.style.display = "inline-block";
+          buscarDocumentos.style.display = "inline-block";
+        } else {
+          mostrarDocumentosUsuario.style.display = "inline-block";
+        }
+        subirDocumentos.style.display = "inline-block";
+
+        // Si el usuario existe, mostrar el botón de cerrar sesión y ocultar el enlace de login
+        logoutBtn.style.display = "inline-block";
+        loginLink.style.display = "none";
+
+        // Agregar evento para cerrar sesión
+        logoutBtn.addEventListener("click", () => {
+          // Eliminar el usuario del LocalStorage
+          localStorage.removeItem("usuario");
+
+          // Redirigir a la página de inicio de sesión
+          window.location.href = "indexBoot.html";
+        });
+      } else {
+        // Si el usuario no existe, mostrar el enlace de login y ocultar el botón de cerrar sesión
+        loginLink.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+      }
+    </script>
+</body></html>

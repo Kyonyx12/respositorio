@@ -12,7 +12,7 @@ loginForm.addEventListener("submit", function (e) {
     .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Usuario autenticado con éxito
-      window.location.assign("./indexBoot.html");
+      window.location.assign("./index.html");
       localStorage.setItem("usuario", email);
       alert("Inicio de sesión exitoso");
     })

@@ -36,7 +36,7 @@ subirDocumentos.addEventListener("submit", function (e) {
             console.log("URL de descarga: ", downloadURL);
 
             alert("Archivo cargado exitosamente.");
-            window.location = "../subirDocumentosBoot.html";            // Aquí puedes enviar la URL de descarga al servidor o hacer lo que necesites con ella
+            window.location.assign("./index.html");           // Aquí puedes enviar la URL de descarga al servidor o hacer lo que necesites con ella
           });
         }
       );
